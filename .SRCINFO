@@ -1,6 +1,6 @@
 pkgbase = python-torchaudio
 	pkgdesc = Data manipulation and transformation for audio signal processing, powered by PyTorch
-	pkgver = 2.3.0
+	pkgver = 2.4.0
 	pkgrel = 1
 	url = https://github.com/pytorch/audio
 	arch = x86_64
@@ -25,9 +25,11 @@ pkgbase = python-torchaudio
 	depends = zlib
 	optdepends = python-kaldi-io
 	conflicts = python-torchaudio-git
-	source = https://github.com/pytorch/audio/archive/refs/tags/v2.3.0.tar.gz
+	source = https://github.com/pytorch/audio/archive/refs/tags/v2.4.0.tar.gz
 	source = https://downloads.sourceforge.net/project/sox/sox/14.4.2/sox-14.4.2.tar.bz2
-	sha256sums = 83f6351754ed57cb625b1322bab8e12c9140213a9b79626cc5bf7dfd122f869d
+	source = 7797f83e1d66ff78872763e1da3a5fb2f0534c40.patch
+	sha256sums = e5d5cc09fd6c1cab9732030352b3d2b207a6e9d940be994df3d233ca2165e5ee
 	sha256sums = 81a6956d4330e75b5827316e44ae381e6f1e8928003c6aa45896da9041ea149c
+	sha256sums = 9d1d6c5018e08cedef4028b23418f7ad69a2d24065509a0697bad25532fd9484
 
 pkgname = python-torchaudio

@@ -3,7 +3,7 @@
 
 pkgname=python-torchaudio
 _pkgname=audio
-pkgver=2.3.0
+pkgver=2.4.0
 _sox_ver=14.4.2
 pkgrel=1
 pkgdesc="Data manipulation and transformation for audio signal processing, powered by PyTorch"
@@ -15,13 +15,16 @@ optdepends=('python-kaldi-io')
 makedepends=('git' 'python-setuptools' 'cmake' 'ninja' 'boost')
 conflicts=('python-torchaudio-git')
 source=("${url}/archive/refs/tags/v${pkgver}.tar.gz"
-	"https://downloads.sourceforge.net/project/sox/sox/$_sox_ver/sox-$_sox_ver.tar.bz2")
-sha256sums=('83f6351754ed57cb625b1322bab8e12c9140213a9b79626cc5bf7dfd122f869d'
-	'81a6956d4330e75b5827316e44ae381e6f1e8928003c6aa45896da9041ea149c')
+	"https://downloads.sourceforge.net/project/sox/sox/$_sox_ver/sox-$_sox_ver.tar.bz2"
+	"7797f83e1d66ff78872763e1da3a5fb2f0534c40.patch")
+sha256sums=('e5d5cc09fd6c1cab9732030352b3d2b207a6e9d940be994df3d233ca2165e5ee'
+	'81a6956d4330e75b5827316e44ae381e6f1e8928003c6aa45896da9041ea149c'
+  '9d1d6c5018e08cedef4028b23418f7ad69a2d24065509a0697bad25532fd9484')
 
 prepare() {
+	ln -s "$srcdir/sox-$_sox_ver" "$srcdir/${_pkgname}-${pkgver}/third_party/sox"
 	cd "$srcdir/${_pkgname}-${pkgver}"
-	git submodule init
+	patch -p1 < "$srcdir/7797f83e1d66ff78872763e1da3a5fb2f0534c40.patch"
 }
 
 build() {
