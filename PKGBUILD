@@ -3,7 +3,7 @@
 
 pkgname=python-torchaudio
 _pkgname=audio
-pkgver=2.4.0
+pkgver=2.4.1
 _sox_ver=14.4.2
 pkgrel=1
 pkgdesc="Data manipulation and transformation for audio signal processing, powered by PyTorch"
@@ -11,13 +11,13 @@ arch=('x86_64' 'i686')
 url="https://github.com/pytorch/audio"
 license=('BSD')
 depends=('python' 'python-pytorch' 'bzip2' 'xz' 'opencore-amr' 'lame' 'libogg' 'libFLAC.so' 'libvorbis' 'opus' 'opusfile' 'zlib')
-optdepends=('python-kaldi-io')
+optdepends=('python-kaldi-io' 'cuda')
 makedepends=('git' 'python-setuptools' 'cmake' 'ninja' 'boost')
 conflicts=('python-torchaudio-git')
 source=("${url}/archive/refs/tags/v${pkgver}.tar.gz"
 	"https://downloads.sourceforge.net/project/sox/sox/$_sox_ver/sox-$_sox_ver.tar.bz2"
 	"7797f83e1d66ff78872763e1da3a5fb2f0534c40.patch")
-sha256sums=('e5d5cc09fd6c1cab9732030352b3d2b207a6e9d940be994df3d233ca2165e5ee'
+sha256sums=('a6b7e1b606ae353b9c4db1c8e754263f53f0457e9ab538e9669c0af0c46a0d5c'
 	'81a6956d4330e75b5827316e44ae381e6f1e8928003c6aa45896da9041ea149c'
   '9d1d6c5018e08cedef4028b23418f7ad69a2d24065509a0697bad25532fd9484')
 
