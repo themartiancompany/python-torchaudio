@@ -65,7 +65,6 @@ makedepends=(
   'boost'
 )
 conflicts=(
-  "${_py}-torchaudio-git"
 )
 source=(
   "${url}/archive/refs/tags/v${pkgver}.tar.gz"
