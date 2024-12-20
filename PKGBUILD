@@ -13,7 +13,7 @@ pkgname="${_py}-${_pkg}"
 pkgver=2.5.1
 _sox_ver=14.4.2
 pkgrel=1
-pkgdesc=(
+_pkgdesc=(
   "Data manipulation and transformation"
   "for audio signal processing, powered by PyTorch"
 )
